@@ -36,6 +36,8 @@
   environment.systemPackages = with pkgs; [
     glances
     hddtemp
+    fd
+    ripgrep
     git
   ];
 

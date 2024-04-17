@@ -19,10 +19,14 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
+
   home.packages = [
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
-    # pkgs.hello
+    # I like to list everything in here I'd run as this user
+    # even if it's also installed on the system level.
+    pkgs.emacs
+    pkgs.fd
+    pkgs.ripgrep
+    pkgs.wget
 
     pkgs.ffmpeg-full
 
