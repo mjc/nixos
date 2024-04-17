@@ -19,6 +19,7 @@
       specialArgs = {inherit inputs;};
       modules = [
         ./hosts/tina/configuration.nix
+        ./modules/nixos/nvidia.nix
         inputs.home-manager.nixosModules.default
       ];
     };

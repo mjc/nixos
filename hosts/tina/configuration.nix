@@ -16,38 +16,10 @@
   # boot.loader.systemd-boot.enable = true;
   # boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.loader.grub = {
-    enable = true;
-    zfsSupport = true;
-    efiSupport = true;
-    efiInstallAsRemovable = true;
-    mirroredBoots = [
-      {
-        devices = ["nodev"];
-        path = "/boot";
-      }
-    ];
-  };
-
   networking.hostName = "tina"; # Define your hostname.
 
   # Set your time zone.
   time.timeZone = "America/Denver";
-
-  nixpkgs.config.allowUnfree = true;
-  hardware.opengl = {
-    enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
-  };
-  services.xserver.videoDrivers = ["nvidia"];
-  hardware.nvidia = {
-    modesetting.enable = true;
-    powerManagement.enable = false;
-    open = false;
-    nvidiaSettings = false;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-  };
 
   users.defaultUserShell = pkgs.zsh;
 
