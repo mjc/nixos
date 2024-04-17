@@ -25,6 +25,7 @@
     # pkgs.hello
 
     pkgs.ffmpeg-full
+
     pkgs.bat
     pkgs.starship
 
@@ -32,6 +33,10 @@
     pkgs.rclone
     pkgs.tmux
 
+    pkgs.alejandra
+
+    pkgs.git
+    pkgs.gh
     pkgs.llvm
     pkgs.rustup
 
