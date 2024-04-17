@@ -24,6 +24,7 @@
 
         ./modules/services/docker.nix
 
+        ./modules/services/tailscale.nix
         ./modules/services/avahi.nix
         ./modules/services/samba.nix
 
