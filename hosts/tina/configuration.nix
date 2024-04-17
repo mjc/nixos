@@ -43,6 +43,7 @@
     rasdaemon
   ];
 
+  hardware.rasdaemon.enable = true;
   hardware.enableRedistributableFirmware = true;
   hardware.cpu.amd.updateMicrocode = true;
 
