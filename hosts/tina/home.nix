@@ -50,6 +50,7 @@
     pkgs.git
     pkgs.gh
     pkgs.llvm
+    pkgs.clang
     pkgs.rustup
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
@@ -169,8 +170,11 @@
 
     oh-my-zsh = {
       enable = true;
-      plugins = ["git" "thefuck" "rust" "fd" "gh" "mosh" "ssh-agent" "sudo" "tmux"];
+      plugins = ["git" "thefuck" "history" "rust" "fd" "gh" "mosh" "ssh-agent" "sudo" "tmux"];
       theme = "robbyrussell";
+      extraConfig = ''
+        PATH=$HOME/.cargo/bin:$PATH
+      '';
     };
   };
 }
