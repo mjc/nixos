@@ -23,13 +23,13 @@
 
   users.defaultUserShell = pkgs.zsh;
 
-  users.groups.media.members = ["mjc" "plex" "radarr" "sonarr" "sabnzbd" "bazarr"];
-
   users.users.mjc = {
     isNormalUser = true;
   };
 
+  users.groups.media.members = ["mjc" "plex" "radarr" "sonarr" "sabnzbd" "bazarr"];
   users.extraGroups.wheel.members = ["mjc"];
+  users.extraGroups.docker.members = ["mjc"];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
