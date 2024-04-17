@@ -12,6 +12,19 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
+  boot.loader.grub = {
+    enable = true;
+    zfsSupport = true;
+    efiSupport = true;
+    efiInstallAsRemovable = true;
+    mirroredBoots = [
+      {
+        devices = ["nodev"];
+        path = "/boot";
+      }
+    ];
+  };
+
   boot.initrd.availableKernelModules = ["nvme" "mpt3sas" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod"];
   boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-amd" "it87"];
