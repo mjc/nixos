@@ -40,6 +40,7 @@
     ripgrep
     git
     microcodeAmd
+    rasdaemon
   ];
 
   hardware.enableRedistributableFirmware = true;
