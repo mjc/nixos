@@ -35,7 +35,6 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     glances
-    hddtemp
     fd
     ripgrep
     git
@@ -46,6 +45,11 @@
   hardware.rasdaemon.enable = true;
   hardware.enableRedistributableFirmware = true;
   hardware.cpu.amd.updateMicrocode = true;
+
+  hardware.sensor.hddtemp = {
+    enable = true;
+    devices = ["/dev/disk/by-id/*"];
+  };
 
   home-manager = {
     # also pass inputs to home-manager modules
