@@ -21,8 +21,9 @@
         ./hosts/tina/configuration.nix
         ./modules/nixos/nvidia.nix
         ./modules/services/avahi.nix
-        ./modules/services/nginx.nix
         ./modules/services/samba.nix
+        ./modules/services/nginx.nix
+        ./modules/services/media.nix
         inputs.home-manager.nixosModules.default
       ];
     };
