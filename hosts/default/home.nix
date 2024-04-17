@@ -26,6 +26,7 @@
 
     pkgs.ffmpeg-full
 
+    pkgs.thefuck
     pkgs.bat
     pkgs.starship
 
