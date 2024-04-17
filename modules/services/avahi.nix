@@ -4,6 +4,7 @@
     ipv4 = true;
     ipv6 = true;
     openFirewall = true;
+    nssmdns = true;
     nssmdns4 = true;
     publish = {
       enable = true;
