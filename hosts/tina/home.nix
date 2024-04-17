@@ -45,6 +45,7 @@
 
     # stuff vscode appreciates
     pkgs.alejandra # nixos formatter
+    pkgs.nil # nix language server
     pkgs.nodePackages.cspell
 
     pkgs.git
