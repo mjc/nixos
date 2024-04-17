@@ -6,8 +6,24 @@
   services.smartd.enable = true;
   services.smartd.autodetect = true;
 
-  services.zfs.autoScrub.enable = true;
-  services.zfs.trim.enable = true;
+  services.zfs = {
+    expandOnBoot = "wonderland";
+
+    # event daemon
+    zed.enableMail = true;
+
+    autoScrub = {
+      enable = true;
+      schedule = "monthly";
+    };
+    trim = {
+      enable = true;
+      schedule = "daily";
+    };
+    autoSnapshot = {
+      enable = true;
+    };
+  };
 
   # TODO: this doesn't work  yet either
   systemd.services.hddtemp = {
