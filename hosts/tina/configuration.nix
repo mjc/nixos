@@ -46,11 +46,6 @@
   hardware.enableRedistributableFirmware = true;
   hardware.cpu.amd.updateMicrocode = true;
 
-  hardware.sensor.hddtemp = {
-    enable = true;
-    devices = ["/dev/disk/by-id/*"];
-  };
-
   home-manager = {
     # also pass inputs to home-manager modules
     #extraSpecialArgs = { inherit inputs; };
