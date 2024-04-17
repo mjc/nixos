@@ -164,11 +164,6 @@
     history.size = 10000;
     history.path = "${config.xdg.dataHome}/zsh/history";
 
-    shellAliases = {
-      ll = "ls -l";
-      nixos_update = "pushd ~/cfg/nixos; ./rebuild.sh; popd";
-    };
-
     oh-my-zsh = {
       enable = true;
       plugins = ["git" "thefuck" "rust" "fd" "gh" "mosh" "ssh-agent" "sudo" "tmux"];
