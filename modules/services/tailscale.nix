@@ -10,4 +10,5 @@
 
   # https://nixos.wiki/wiki/Tailscale#Known_issues
   networking.interfaces.tailscale0.useDHCP = lib.mkDefault false;
+  services.resolved.enable = true;
 }
