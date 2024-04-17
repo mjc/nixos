@@ -37,10 +37,10 @@
   services.plex = let
     plexpass = pkgs.plex.override {
       plexRaw = pkgs.plexRaw.overrideAttrs (old: rec {
-        version = "1.40.2.8351-9938371be";
+        version = "1.40.2.8383-15541a816";
         src = pkgs.fetchurl {
           url = "https://downloads.plex.tv/plex-media-server-new/${version}/debian/plexmediaserver_${version}_amd64.deb";
-          sha256 = "sha256-yL/3cNChtdfYaRqRl0WeJuc3Y6F/r4r63fVIVjk+FeY=";
+          sha256 = "sha256-iL+kzAcAw8V8dmd1t8aAO8T/eKLAtnLGSBXepS9JCJQ=";
         };
       });
     };
