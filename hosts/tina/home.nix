@@ -43,7 +43,7 @@
     pkgs.tmux
 
     # stuff vscode appreciates
-    pkgs.alejandra
+    pkgs.alejandra # nixos formatter
     pkgs.nodePackages.cspell
 
     pkgs.git
