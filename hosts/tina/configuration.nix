@@ -65,6 +65,8 @@
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
+
+  # nix-ld fixes remote vscode
   programs.nix-ld.enable = true;
   programs.zsh.enable = true;
   programs.mosh.enable = true;
