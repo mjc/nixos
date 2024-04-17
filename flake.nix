@@ -22,6 +22,7 @@
         ./modules/nixos/nvidia.nix
         ./modules/services/avahi.nix
         ./modules/services/nginx.nix
+        ./modules/services/samba.nix
         inputs.home-manager.nixosModules.default
       ];
     };
