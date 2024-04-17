@@ -24,22 +24,25 @@
     # I like to list everything in here I'd run as this user
     # even if it's also installed on the system level.
     pkgs.emacs
+
+    pkgs.bat
     pkgs.fd
     pkgs.ripgrep
+
     pkgs.wget
 
     pkgs.ffmpeg-full
 
     pkgs.thefuck
-    pkgs.bat
     pkgs.starship
-    pkgs.nodePackages.cspell
 
     pkgs.ncdu
     pkgs.rclone
     pkgs.tmux
 
+    # stuff vscode appreciates
     pkgs.alejandra
+    pkgs.nodePackages.cspell
 
     pkgs.git
     pkgs.gh
