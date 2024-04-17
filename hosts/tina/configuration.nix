@@ -73,9 +73,6 @@
     enableSSHSupport = true;
   };
 
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-
   networking.firewall.enable = false;
 
   # Copy the NixOS configuration file and link it from the resulting system

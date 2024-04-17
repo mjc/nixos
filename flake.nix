@@ -27,6 +27,7 @@
         ./modules/services/tailscale.nix
         ./modules/services/avahi.nix
         ./modules/services/samba.nix
+        ./modules/services/openssh.nix
 
         ./modules/services/nginx.nix
         ./modules/services/glances.nix
