@@ -29,7 +29,8 @@
   boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-amd" "it87"];
   boot.extraModulePackages = [];
-  boot.kernelParams = ["nohibernate"];
+  # mitigations=off is DANGEROUS.
+  boot.kernelParams = ["nohibernate" "mitigations=off"];
 
   fileSystems."/" = {
     device = "wonderland/root";
