@@ -12,9 +12,7 @@
 
     serviceConfig = {
       Type = "simple";
-      RemainAfterExit = "yes";
       Restart = "on-abort";
-      User = "mjc";
       ExecStart = ''${pkgs.glances}/bin/glances -w -B 127.0.0.1 --enable-plugin hddtemp'';
     };
   };
