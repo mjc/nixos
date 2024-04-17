@@ -219,15 +219,6 @@
         proxyWebsockets = true; # needed if you need to use WebSocket
       };
     };
-    # virtualHosts."jellyfin.325i.org" = {
-    #   enableACME = true;
-    #   forceSSL = true;
-    #   root = "/var/www";
-    #   locations."/" = {
-    #     proxyPass = "http://127.0.0.1:8096";
-    #     proxyWebsockets = true; # needed if you need to use WebSocket
-    #   };
-    # };
     virtualHosts."glances.325i.org" = {
       enableACME = true;
       forceSSL = true;
