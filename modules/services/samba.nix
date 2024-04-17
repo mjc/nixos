@@ -1,3 +1,4 @@
+# TODO: not working quite yet
 {config, ...}: {
   services.samba = {
     enable = true;
