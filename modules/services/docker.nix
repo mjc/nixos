@@ -1,5 +1,11 @@
-{config, ...}: {
-  virtualisation.docker.enable = true;
-  virtualisation.docker.storageDriver = "zfs";
-  # TODO: nvidia docker stuff
+{
+  config,
+  pkgs,
+  ...
+}: {
+  virtualisation.docker = {
+    enable = true;
+    storageDriver = "zfs";
+    # TODO: figure out nvidia containers
+  };
 }
