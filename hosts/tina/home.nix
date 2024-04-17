@@ -33,6 +33,7 @@
     pkgs.wget
 
     pkgs.ffmpeg-full
+    pkgs.mediainfo
 
     pkgs.thefuck
     pkgs.starship
