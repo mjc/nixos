@@ -20,6 +20,7 @@
       modules = [
         ./hosts/tina/configuration.nix
         ./modules/nixos/nvidia.nix
+        ./modules/nixos/disks.nix
         ./modules/services/avahi.nix
         ./modules/services/samba.nix
         ./modules/services/nginx.nix
