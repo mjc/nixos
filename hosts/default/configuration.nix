@@ -233,6 +233,7 @@
     '';
   };
 
+  # TODO: this doesn't work  yet either
   systemd.services.hddtemp = {
     enable = true;
     wantedBy = ["multiuser.target"];
