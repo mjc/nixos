@@ -57,7 +57,6 @@
     isNormalUser = true;
   };
 
-
   users.extraGroups.wheel.members = ["mjc"];
 
   # List packages installed in system profile. To search, run:
@@ -304,7 +303,7 @@
     user = "mjc";
     group = "media";
   };
-  
+
   services.plex = let
     plexpass = pkgs.plex.override {
       plexRaw = pkgs.plexRaw.overrideAttrs (old: rec {
