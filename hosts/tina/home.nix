@@ -29,6 +29,7 @@
     pkgs.fd
     pkgs.ripgrep
 
+    pkgs.rclone
     pkgs.wget
 
     pkgs.ffmpeg-full
@@ -36,8 +37,9 @@
     pkgs.thefuck
     pkgs.starship
 
+    pkgs.htop
     pkgs.ncdu
-    pkgs.rclone
+
     pkgs.tmux
 
     # stuff vscode appreciates
