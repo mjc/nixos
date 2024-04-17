@@ -143,9 +143,35 @@
   #  /etc/profiles/per-user/mjc/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "emacs";
   };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+
+    autocd = true; # typing /foo will do cd /foo if /foo is a directory.
+
+    enableVteIntegration = true;
+
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
+
+    history.size = 10000;
+    history.path = "${config.xdg.dataHome}/zsh/history";
+
+    shellAliases = {
+      ll = "ls -l";
+      update = "pushd ~/cfg/nixos; ./rebuild.sh; popd";
+    };
+
+    oh-my-zsh = {
+      enable = true;
+      plugins = ["git" "thefuck" "rust" "fd" "gh" "mosh" "ssh-agent" "sudo" "tmux"];
+      theme = "robbyrussell";
+    };
+  };
 }
