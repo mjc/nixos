@@ -165,7 +165,7 @@
 
     shellAliases = {
       ll = "ls -l";
-      update = "pushd ~/cfg/nixos; ./rebuild.sh; popd";
+      nixos-update = "pushd ~/cfg/nixos; ./rebuild.sh; popd";
     };
 
     oh-my-zsh = {
