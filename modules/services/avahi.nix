@@ -1,4 +1,4 @@
-{config, ...}: {
+{...}: {
   services.avahi = {
     enable = true;
     ipv4 = true;

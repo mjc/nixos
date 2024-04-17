@@ -1,4 +1,4 @@
-{config, ...}: {
+{...}: {
   security.acme = {
     acceptTerms = true;
     defaults.email = "michael.joseph.cohen@gmail.com";

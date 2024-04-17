@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}: {
+{lib, ...}: {
   services.smartd.enable = true;
   services.smartd.autodetect = true;
 

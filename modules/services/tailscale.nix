@@ -1,8 +1,4 @@
-{
-  config,
-  lib,
-  ...
-}: {
+{lib, ...}: {
   services.tailscale = {
     enable = true;
     useRoutingFeatures = "server";
