@@ -3,5 +3,12 @@
 		{
 			"path": "."
 		}
-	]
+	],
+	"extensions": {
+		"recommendations": [
+			"kamadorueda.alejandra",
+			"github.copilot",
+			"jnoortheen.nix-ide"
+		]
+	}
 }

@@ -29,6 +29,7 @@
     pkgs.thefuck
     pkgs.bat
     pkgs.starship
+    pkgs.nodePackages.cspell
 
     pkgs.ncdu
     pkgs.rclone
