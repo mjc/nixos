@@ -20,6 +20,7 @@
       modules = [
         ./hosts/tina/configuration.nix
         ./modules/nixos/nvidia.nix
+        ./modules/services/avahi.nix
         inputs.home-manager.nixosModules.default
       ];
     };

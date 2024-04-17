@@ -80,25 +80,12 @@
   # List services that you want to enable:
 
   services.smartd.enable = true;
+  services.smartd.autodetect = true;
   services.zfs.autoScrub.enable = true;
   services.zfs.trim.enable = true;
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
-
-  services.avahi = {
-    enable = true;
-    ipv4 = true;
-    ipv6 = true;
-    openFirewall = true;
-    nssmdns4 = true;
-    publish = {
-      enable = true;
-      addresses = true;
-      userServices = true;
-      workstation = true;
-    };
-  };
 
   services.tailscale = {
     enable = true;
