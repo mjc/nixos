@@ -28,6 +28,7 @@
         ./modules/services/samba.nix
 
         ./modules/services/nginx.nix
+        ./modules/services/glances.nix
         ./modules/services/media.nix
         inputs.home-manager.nixosModules.default
       ];

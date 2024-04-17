@@ -81,31 +81,7 @@
     useRoutingFeatures = "server";
   };
 
-  # TODO: figure out why services.glances.enable = true; does not work
-  systemd.services.glances = {
-    enable = true;
-    wantedBy = ["multiuser.target"];
-    after = ["network.target"];
-    description = "Start the glances web ui";
-
-    serviceConfig = {
-      Type = "simple";
-      RemainAfterExit = "yes";
-      Restart = "on-abort";
-      User = "mjc";
-      ExecStart = ''${pkgs.glances}/bin/glances -w -B 127.0.0.1 --enable-plugin hddtemp'';
-    };
-  };
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
   networking.firewall.enable = false;
-
-  virtualisation.docker.enable = true;
-  virtualisation.docker.storageDriver = "zfs";
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
