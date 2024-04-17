@@ -7,18 +7,15 @@
   services.smartd.autodetect = true;
 
   services.zfs = {
-    expandOnBoot = "wonderland";
-
-    # event daemon
-    zed.enableMail = true;
+    expandOnBoot = ["wonderland"];
 
     autoScrub = {
       enable = true;
-      schedule = "monthly";
+      interval = "monthly";
     };
     trim = {
       enable = true;
-      schedule = "daily";
+      interval = "daily";
     };
     autoSnapshot = {
       enable = true;
