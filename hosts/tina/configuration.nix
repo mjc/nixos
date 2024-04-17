@@ -34,14 +34,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    emacs
-    wget
-    fd
-    alejandra
-    nixfmt-rfc-style
     glances
     hddtemp
-    mediainfo
     git
   ];
 
