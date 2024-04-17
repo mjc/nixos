@@ -39,6 +39,7 @@
     fd
     ripgrep
     git
+    microcodeAmd
   ];
 
   home-manager = {
