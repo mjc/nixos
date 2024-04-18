@@ -49,10 +49,11 @@
     pkgs.nil # nix language server
     pkgs.nodePackages.cspell
 
-    pkgs.git
-    pkgs.gh
-    pkgs.llvm
     pkgs.clang
+    pkgs.gh
+    pkgs.git
+    pkgs.llvm
+    pkgs.mold
     pkgs.rustup
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
