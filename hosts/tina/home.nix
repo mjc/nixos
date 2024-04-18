@@ -20,10 +20,14 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
 
-  home.packages = [
+  home.packages = let
+    jdownloader = pkgs.callPackage ../../derivations/jdownloader.nix {};
+  in [
     # I like to list everything in here I'd run as this user
     # even if it's also installed on the system level.
     pkgs.emacs
+
+    jdownloader
 
     pkgs.bat
     pkgs.fd
