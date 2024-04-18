@@ -31,6 +31,7 @@
 
     pkgs.rclone
     pkgs.wget
+    pkgs.yt-dlp
 
     pkgs.ffmpeg-full
     pkgs.mediainfo
