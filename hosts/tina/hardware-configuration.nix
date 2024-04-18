@@ -26,7 +26,7 @@
 
   boot.initrd.availableKernelModules = ["nvme" "mpt3sas" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod"];
   boot.initrd.kernelModules = [];
-  boot.kernelModules = ["kvm-amd" "it87"];
+  boot.kernelModules = ["kvm-amd" "it87" "tcp_bbr"];
   boot.extraModulePackages = [];
   # mitigations=off is DANGEROUS.
   boot.kernelParams = ["nohibernate" "mitigations=off"];
