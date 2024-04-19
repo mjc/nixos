@@ -46,6 +46,9 @@
   hardware.enableRedistributableFirmware = true;
   hardware.cpu.amd.updateMicrocode = true;
 
+  # for running binaries from other architectures
+  # boot.binfmt.emulatedSystems = ["aarch64-linux" "wasm64-wasi" "x86_64-windows" "i686-windows"];
+
   home-manager = {
     # also pass inputs to home-manager modules
     #extraSpecialArgs = { inherit inputs; };
