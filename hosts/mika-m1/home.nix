@@ -22,6 +22,8 @@
     pkgs.ripgrep
     pkgs.git
 
+    pkgs.rustup
+
     pkgs.thefuck
     pkgs.starship
 
