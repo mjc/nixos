@@ -17,6 +17,8 @@
 
     pkgs.mosh
 
+    pkgs.gh
+
     pkgs.jq
     pkgs.fd
     pkgs.ripgrep
