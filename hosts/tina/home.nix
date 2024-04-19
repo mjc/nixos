@@ -73,7 +73,7 @@
     (pkgs.writeShellScriptBin "av1-6ch" ''
       video="--pix-format yuv420p10le"
       audio="--acodec libopus --enc b:a=128k --enc ac=6"
-      grain="--svt film-grain=8 --svt tune=0 --svt film-grain-denoise=0"
+      # grain="--svt film-grain=8 --svt tune=0 --svt film-grain-denoise=0"
       filter="--vfilter scale=1920:-2 ''${grain}"
       av1cmd="ab-av1 auto-encode ''${video} ''${filter}  ''${audio} --scd true --cache true --keyint 30s -i"
       fd . -E '*720*' -E '*Opus*' -e mkv -j1 -x ''${av1cmd}
@@ -81,7 +81,7 @@
     (pkgs.writeShellScriptBin "av1-8ch" ''
       video="--pix-format yuv420p10le"
       audio="--acodec libopus --enc b:a=256k --enc ac=8"
-      grain="--svt film-grain=8 --svt tune=0 --svt film-grain-denoise=0"
+      # grain="--svt film-grain=8 --svt tune=0 --svt film-grain-denoise=0"
       filter="--vfilter scale=1920:-2 ''${grain}"
       av1cmd="ab-av1 auto-encode ''${video}  ''${filter}  ''${audio} --scd true --cache true --keyint 30s -i"
       fd . -E '*720*' -E '*Opus*' -e mkv -j1 -x ''${av1cmd}
@@ -89,7 +89,7 @@
     (pkgs.writeShellScriptBin "av1-stereo" ''
       video="--pix-format yuv420p10le"
       audio="--acodec libopus --enc b:a=48k --enc ac=2"
-      grain="--svt film-grain=8 --svt tune=0 --svt film-grain-denoise=0"
+      # grain="--svt film-grain=8 --svt tune=0 --svt film-grain-denoise=0"
       filter="--vfilter scale=1920:-2 ''${grain}"
       av1cmd="ab-av1 auto-encode ''${video} ''${filter}  ''${audio} --scd true --cache true --keyint 30s -i"
       fd . -E '*720*' -E '*Opus*' -e mkv -j1 -x ''${av1cmd}
