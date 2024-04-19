@@ -29,6 +29,8 @@
     pkgs.alejandra # nixos formatter
     pkgs.nil # nix language server
     pkgs.nodePackages.cspell
+
+    pkgs.tmux
   ];
 
   programs.starship = {
