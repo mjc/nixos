@@ -9,6 +9,11 @@
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
   home.packages = [
+    pkgs.emacs
+
+    pkgs.ripgrep
+    pkgs.git
+
     # stuff vscode appreciates
     pkgs.alejandra # nixos formatter
     pkgs.nil # nix language server
