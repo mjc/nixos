@@ -11,6 +11,10 @@
   home.packages = [
     pkgs.emacs
 
+    pkgs.mosh
+
+    pkgs.jq
+    pkgs.fd
     pkgs.ripgrep
     pkgs.git
 
