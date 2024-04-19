@@ -3,6 +3,8 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nix-darwin.url = "github:LnL7/nix-darwin";
+    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -10,14 +12,22 @@
     };
   };
 
-  outputs = {
+  outputs = inputs @ {
     self,
     nixpkgs,
+    nix-darwin,
+    home-manager,
     ...
-  } @ inputs: {
+  }: let
+    configuration = {pkgs, ...}: {
+      # Set Git commit hash for darwin-version.
+      system.configurationRevision = self.rev or self.dirtyRev or null;
+    };
+    in{
     nixosConfigurations.tina = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
+        configuration
         ./hosts/tina/configuration.nix
         ./modules/nixos/nvidia.nix
         ./modules/nixos/disks.nix
@@ -36,5 +46,25 @@
         inputs.home-manager.nixosModules.default
       ];
     };
+
+    darwinConfigurations."mika-m1" = nix-darwin.lib.darwinSystem {
+      specialArgs = {inherit inputs;};
+      modules = [
+        configuration
+        ./hosts/mika-m1/configuration.nix
+
+        home-manager.darwinModules.home-manager
+        {
+          home-manager = {
+            # include the home-manager module
+            users.mjc = import ./hosts/mika-m1/home.nix;
+          };
+          users.users.mjc.home = "/Users/mjc";
+        }
+      ];
+    };
+
+    # Expose the package set, including overlays, for convenience.
+    darwinPackages = self.darwinConfigurations."mika-m1".pkgs;
   };
 }
