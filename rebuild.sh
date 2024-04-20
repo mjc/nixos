@@ -4,7 +4,7 @@
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Linux*)     sudo nixos-rebuild switch --refresh --flake "$(pwd)";;
-    Darwin*)    darwin-rebuild switch --flake "$(pwd)";;
+    Darwin*)    darwin-rebuild switch --refresh --flake "$(pwd)";;
 esac
 # nix-collect-garbage --delete-older-than 30d
 nix-store --optimize
