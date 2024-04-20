@@ -35,6 +35,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     glances
+    mosh
     fd
     ripgrep
     git
