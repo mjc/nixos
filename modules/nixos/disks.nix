@@ -23,4 +23,8 @@
       enable = true;
     };
   };
+
+  boot.extraModprobeConfig = ''
+    options zfs zfs_arc_max=53876853964
+  '';
 }
