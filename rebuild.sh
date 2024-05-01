@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 
 # NOTE: if you are doing a major upgrade you must pass --upgrade
-unameOut="$(uname -s)"
-case "${unameOut}" in
+operating_system="$(uname -s)"
+case "${operating_system}" in
     Linux*)     doas nixos-rebuild switch --refresh --flake "$(pwd)";;
     Darwin*)    darwin-rebuild switch --refresh --flake "$(pwd)";;
 esac
