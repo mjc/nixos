@@ -208,7 +208,7 @@
       plugins = ["git" "thefuck" "history" "rust" "fd" "gh" "mosh" "ssh-agent" "sudo" "tmux"];
       theme = "robbyrussell";
       extraConfig = ''
-        PATH=$HOME/.cargo/bin:$PATH
+        PATH=$HOME/.cargo/bin:$HOME/.npm-packages/bin:$PATH
       '';
     };
   };
