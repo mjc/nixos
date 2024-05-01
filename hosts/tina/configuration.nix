@@ -77,12 +77,22 @@
 
   # nix-ld fixes remote vscode
   programs.nix-ld.enable = true;
+
   programs.zsh.enable = true;
   programs.mosh.enable = true;
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
   };
+
+  security.doas.enable = true;
+  security.doas.extraRules = [
+    {
+      users = ["mjc"];
+      keepEnv = true;
+      persist = true;
+    }
+  ];
 
   networking.firewall.enable = false;
   boot.kernel.sysctl."net.ipv4.tcp_congestion_control" = "bbr";
