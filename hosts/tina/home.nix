@@ -5,11 +5,13 @@
 }: {
   imports = [
     ../../modules/home-manager/cli-internet.nix
+    ../../modules/home-manager/cli-media.nix
     ../../modules/home-manager/cli-quality-of-life.nix
     ../../modules/home-manager/dev-tools.nix
     ../../modules/home-manager/dev-tools.nix
     ../../modules/home-manager/file-management.nix
     ../../modules/home-manager/tmux.nix
+    ../../modules/home-manager/zsh.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -29,9 +31,6 @@
   # environment.
 
   home.packages = with pkgs; [
-    ffmpeg-full
-    mediainfo
-
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
@@ -162,30 +161,6 @@
       # };
 
       # package.disabled = true;
-    };
-  };
-
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-
-    autocd = true; # typing /foo will do cd /foo if /foo is a directory.
-
-    enableVteIntegration = true;
-
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
-
-    history.size = 10000;
-    history.path = "${config.xdg.dataHome}/zsh/history";
-
-    oh-my-zsh = {
-      enable = true;
-      plugins = ["git" "thefuck" "history" "rust" "fd" "gh" "mosh" "ssh-agent" "sudo" "tmux"];
-      theme = "robbyrussell";
-      extraConfig = ''
-        PATH=$HOME/.cargo/bin:$HOME/.npm-packages/bin:$PATH
-      '';
     };
   };
 }

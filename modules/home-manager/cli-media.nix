@@ -1,9 +1,6 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    rclone
-    wget
-    yt-dlp
-
-    mosh
+    ffmpeg-full
+    mediainfo
   ];
 }

@@ -14,17 +14,13 @@
 
   imports = [
     ../../modules/home-manager/cli-internet.nix
+    ../../modules/home-manager/cli-media.nix
     ../../modules/home-manager/cli-quality-of-life.nix
     ../../modules/home-manager/dev-tools.nix
     ../../modules/home-manager/dev-tools.nix
     ../../modules/home-manager/file-management.nix
     ../../modules/home-manager/tmux.nix
-  ];
-
-  home.packages = with pkgs; [
-    emacs
-
-    mosh
+    ../../modules/home-manager/zsh.nix
   ];
 
   programs.starship = {
@@ -39,30 +35,6 @@
       # };
 
       # package.disabled = true;
-    };
-  };
-
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-
-    autocd = true; # typing /foo will do cd /foo if /foo is a directory.
-
-    enableVteIntegration = true;
-
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
-
-    history.size = 10000;
-    history.path = "${config.xdg.dataHome}/zsh/history";
-
-    oh-my-zsh = {
-      enable = true;
-      plugins = ["git" "thefuck" "history" "rust" "fd" "gh" "mosh" "ssh-agent" "sudo" "tmux"];
-      theme = "robbyrussell";
-      extraConfig = ''
-        PATH=$HOME/.cargo/bin:$PATH
-      '';
     };
   };
 }
