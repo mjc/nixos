@@ -14,12 +14,16 @@
     clang
     llvm
     mold
+    zld
     rustup
   ];
 
   home.file = {
     ".cargo/config.toml" = {
       text = ''
+        [target.x86_64-apple-darwin]
+        rustflags = ["-C", "link-arg=-fuse-ld=${pkgs.zld}/bin/zld"]
+
         [target.x86_64-unknown-linux-gnu]
         linker = "${pkgs.clang}/bin/clang"
         rustflags = ["-C", "link-arg=--ld-path=${pkgs.mold}/bin/mold", "-C", "target-cpu=native", "-Z", "threads=8"]
