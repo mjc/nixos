@@ -1,5 +1,8 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
+    # soon to be in nixpkgs
+    # https://github.com/NixOS/nixpkgs/pull/305435
+    # ab-av1
     ffmpeg-full
     mediainfo
 
