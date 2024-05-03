@@ -23,7 +23,7 @@
     ".cargo/config.toml" = {
       text = ''
         [target.x86_64-apple-darwin]
-        # rustflags = ["-C", "link-arg=-fuse-ld=${pkgs.zld}/bin/zld"]
+        # pkgs.zld when I conditionalize it
         rustflags = ["-C", "link-arg=-fuse-ld=${pkgs.mold}/bin/mold", "-C", "target-cpu=native", "-Z", "threads=8"]
 
         [target.x86_64-unknown-linux-gnu]
