@@ -5,6 +5,7 @@
 }: {
   imports = [
     ../../modules/home-manager/tmux.nix
+    ../../modules/home-manager/dev-tools.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -44,18 +45,6 @@
 
     htop
     ncdu
-
-    # stuff vscode appreciates
-    alejandra # nixos formatter
-    nil # nix language server
-    nodePackages.cspell
-
-    clang
-    gh
-    git
-    llvm
-    mold
-    rustup
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the

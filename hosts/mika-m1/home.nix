@@ -14,6 +14,7 @@
 
   imports = [
     ../../modules/home-manager/tmux.nix
+    ../../modules/home-manager/dev-tools.nix
   ];
 
   home.packages = with pkgs; [
@@ -21,22 +22,13 @@
 
     mosh
 
-    gh
-
     jq
     fd
     ripgrep
     git
 
-    rustup
-
     thefuck
     starship
-
-    # stuff vscode appreciates
-    alejandra # nixos formatter
-    nil # nix language server
-    nodePackages.cspell
   ];
 
   programs.starship = {
