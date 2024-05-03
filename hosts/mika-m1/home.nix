@@ -18,4 +18,8 @@
     ../../modules/home-manager/tmux.nix
     ../../modules/home-manager/zsh.nix
   ];
+
+  home.sessionVariables = {
+    EDITOR = "code -w";
+  };
 }

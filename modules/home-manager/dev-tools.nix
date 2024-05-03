@@ -1,4 +1,10 @@
 {pkgs, ...}: {
+  programs.git = {
+    enable = true;
+    userName = "Mika Cohen";
+    userEmail = "mjc@kernel.org";
+  };
+
   home.packages = with pkgs; [
     jq
 

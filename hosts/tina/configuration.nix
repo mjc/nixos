@@ -50,6 +50,7 @@
   # for running binaries from other architectures
   # boot.binfmt.emulatedSystems = ["aarch64-linux" "wasm64-wasi" "x86_64-windows" "i686-windows"];
 
+  programs.home-manager.enable = true;
   home-manager = {
     # also pass inputs to home-manager modules
     #extraSpecialArgs = { inherit inputs; };
