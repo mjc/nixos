@@ -62,6 +62,13 @@
     # # fonts?
     # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 
+    (writeShellScriptBin "recompress-nzbs" ''
+      zfs list -o name,space,compress,compressratio wonderland/downloads/nzbs
+      fd 'gz$' /mnt/downloads/nzbs -x gzip -fd
+      sleep 5
+      zfs list -o name,space,compress,compressratio wonderland/downloads/nzbs
+    '')
+
     # TODO: consolidate these.
     (writeShellScriptBin "av1-6ch" ''
       video="--pix-format yuv420p10le"
