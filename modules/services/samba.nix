@@ -21,6 +21,12 @@
         "read only" = "no";
         "guest ok" = "no";
       };
+      movies = {
+        path = "/mnt/movies";
+        browseable = "yes";
+        "read only" = "yes";
+        "guest ok" = "yes";
+      };
     };
   };
 
