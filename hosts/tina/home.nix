@@ -45,8 +45,6 @@
     htop
     ncdu
 
-    tmux
-
     # stuff vscode appreciates
     alejandra # nixos formatter
     nil # nix language server

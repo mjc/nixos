@@ -12,29 +12,31 @@
   # release notes.
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
-  home.packages = [
-    pkgs.emacs
+  imports = [
+    ../../modules/home-manager/tmux.nix
+  ];
 
-    pkgs.mosh
+  home.packages = with pkgs; [
+    emacs
 
-    pkgs.gh
+    mosh
 
-    pkgs.jq
-    pkgs.fd
-    pkgs.ripgrep
-    pkgs.git
+    gh
 
-    pkgs.rustup
+    jq
+    fd
+    ripgrep
+    git
 
-    pkgs.thefuck
-    pkgs.starship
+    rustup
+
+    thefuck
+    starship
 
     # stuff vscode appreciates
-    pkgs.alejandra # nixos formatter
-    pkgs.nil # nix language server
-    pkgs.nodePackages.cspell
-
-    pkgs.tmux
+    alejandra # nixos formatter
+    nil # nix language server
+    nodePackages.cspell
   ];
 
   programs.starship = {
