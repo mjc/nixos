@@ -27,6 +27,16 @@
         "read only" = "yes";
         "guest ok" = "yes";
       };
+      time_machine = {
+        path = "/mnt/backup/time_machine";
+        "valid users" = "mjc";
+        public = "no";
+        writeable = "yes";
+        "force group" = "media";
+        "fruit:aapl" = "yes";
+        "fruit:time machine" = "yes";
+        "vfs objects" = "catia fruit streams_xattr";
+      };
     };
   };
 
