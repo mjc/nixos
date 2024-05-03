@@ -14,7 +14,8 @@
     clang
     llvm
     mold
-    zld
+    # TODO: conditionalize zld on darwin-only
+    # zld
     rustup
   ];
 
@@ -22,7 +23,8 @@
     ".cargo/config.toml" = {
       text = ''
         [target.x86_64-apple-darwin]
-        rustflags = ["-C", "link-arg=-fuse-ld=${pkgs.zld}/bin/zld"]
+        # rustflags = ["-C", "link-arg=-fuse-ld=${pkgs.zld}/bin/zld"]
+        rustflags = ["-C", "link-arg=-fuse-ld=${pkgs.mold}/bin/mold", "-C", "target-cpu=native", "-Z", "threads=8"]
 
         [target.x86_64-unknown-linux-gnu]
         linker = "${pkgs.clang}/bin/clang"
