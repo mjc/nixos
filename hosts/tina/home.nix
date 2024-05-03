@@ -4,8 +4,12 @@
   ...
 }: {
   imports = [
-    ../../modules/home-manager/tmux.nix
+    ../../modules/home-manager/cli-internet.nix
+    ../../modules/home-manager/cli-quality-of-life.nix
     ../../modules/home-manager/dev-tools.nix
+    ../../modules/home-manager/dev-tools.nix
+    ../../modules/home-manager/file-management.nix
+    ../../modules/home-manager/tmux.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -25,26 +29,8 @@
   # environment.
 
   home.packages = with pkgs; [
-    # I like to list everything in here I'd run as this user
-    # even if it's also installed on the system level.
-    emacs
-
-    bat
-    fd
-    ripgrep
-
-    rclone
-    wget
-    yt-dlp
-
     ffmpeg-full
     mediainfo
-
-    thefuck
-    starship
-
-    htop
-    ncdu
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the

@@ -13,20 +13,18 @@
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
   imports = [
-    ../../modules/home-manager/tmux.nix
+    ../../modules/home-manager/cli-internet.nix
+    ../../modules/home-manager/cli-quality-of-life.nix
     ../../modules/home-manager/dev-tools.nix
+    ../../modules/home-manager/dev-tools.nix
+    ../../modules/home-manager/file-management.nix
+    ../../modules/home-manager/tmux.nix
   ];
 
   home.packages = with pkgs; [
     emacs
 
     mosh
-
-    fd
-    ripgrep
-
-    thefuck
-    starship
   ];
 
   programs.starship = {
