@@ -22,10 +22,8 @@
 
     mosh
 
-    jq
     fd
     ripgrep
-    git
 
     thefuck
     starship

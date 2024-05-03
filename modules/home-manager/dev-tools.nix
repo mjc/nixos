@@ -1,5 +1,7 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
+    jq
+
     git
     gh
     nodePackages.cspell
