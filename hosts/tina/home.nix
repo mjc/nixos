@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ../../modules/home-manager/cli-internet.nix
     ../../modules/home-manager/cli-media.nix
