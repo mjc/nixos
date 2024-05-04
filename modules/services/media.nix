@@ -46,4 +46,11 @@
     package = plexpass;
     group = "media";
   };
+
+  services.ombi = {
+    enable = true;
+    openFirewall = true;
+    user = "mjc";
+    group = "media";
+  };
 }
