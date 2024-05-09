@@ -44,7 +44,7 @@
       video="''${x265} --pix-format yuv420p10le"
       audio="--acodec libopus --enc b:a=256k --enc ac=8"
       scale="--vfilter scale=1920:-2"
-      av1cmd="ab-av1 auto-encode $\{video} $\{scale} ''${audio} --scd true --cache true --keyint 30s -i"
+      av1cmd="ab-av1 auto-encode ''${video} ''${scale} ''${audio} --scd true --cache true --keyint 30s -i"
       fd 7\.1 -E '*720*' -E '*Opus*' -e mkv -j1 -x ''${av1cmd}
     '')
     (writeShellScriptBin "x265-stereo" ''
