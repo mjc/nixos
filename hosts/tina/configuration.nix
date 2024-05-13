@@ -52,7 +52,7 @@
     glances
     mosh
     fd
-    ripgrep
+    ripgrep-all
     git
     microcodeAmd
     rasdaemon
