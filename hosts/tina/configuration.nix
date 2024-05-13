@@ -29,9 +29,22 @@
     isNormalUser = true;
   };
 
-  users.groups.media.members = ["mjc" "plex" "radarr" "sonarr" "sabnzbd" "bazarr"];
+  users.users.viki = {
+    isNormalUser = true;
+  };
+
+  users.groups.media.members = [
+    "mjc"
+    "viki"
+    "plex"
+    "radarr"
+    "sonarr"
+    "sabnzbd"
+    "bazarr"
+  ];
   users.extraGroups.wheel.members = ["mjc"];
   users.extraGroups.docker.members = ["mjc"];
+  users.extraGroups.backup.members = ["mjc" "viki"];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
