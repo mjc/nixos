@@ -25,10 +25,10 @@
 
   home.packages = with pkgs; [
     (writeShellScriptBin "recompress-nzbs" ''
-      zfs list -o name,space,compress,compressratio wonderland/downloads/nzbs
+      zfs list -o name,space,compress,compressratio backup/downloads/nzbs
       fd 'gz$' /mnt/downloads/nzbs -x gzip -fd
       sleep 5
-      zfs list -o name,space,compress,compressratio wonderland/downloads/nzbs
+      zfs list -o name,space,compress,compressratio backup/downloads/nzbs
     '')
   ];
 
