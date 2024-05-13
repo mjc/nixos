@@ -23,7 +23,7 @@
       # Set Git commit hash for darwin-version.
       system.configurationRevision = self.rev or self.dirtyRev or null;
     };
-    in{
+  in {
     nixosConfigurations.tina = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [

@@ -6,6 +6,8 @@
     ffmpeg-full
     mediainfo
 
+    mkvtoolnix
+
     # TODO: consolidate these.
     (writeShellScriptBin "av1-6ch" ''
       video="--pix-format yuv420p10le"
