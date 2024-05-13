@@ -10,7 +10,8 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ../../services/backup.nix
+    # this machine backs up important data to another zfs pool
+    ./backup.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
