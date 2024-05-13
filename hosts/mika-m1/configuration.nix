@@ -3,6 +3,8 @@
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
     home-manager
+    python313
+    ruby_3_3
   ];
 
   # Auto upgrade nix package and the daemon service.
