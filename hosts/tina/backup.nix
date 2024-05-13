@@ -27,5 +27,22 @@
       "wonderland/root".target = "backup/synced/tina/root";
       "wonderland/var".target = "backup/synced/tina/var";
     };
+    localSourceAllow = [
+      "bookmark"
+      "hold"
+      "send"
+      "snapshot"
+      "destroy"
+      "mount"
+    ];
+    localTargetAllow = [
+      "compression"
+      "create"
+      "mount"
+      "mountpoint"
+      "receive"
+      "rollback"
+      "destroy"
+    ];
   };
 }
