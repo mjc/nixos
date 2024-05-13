@@ -7,6 +7,7 @@
     extraConfig = ''
       server string = tina
       netbios name = tina
+      workgroup = WORKGROUP
       use sendfile = yes
       hosts allow = 192.168.1.0/24 127.0.0.1 localhost
       hosts deny = 0.0.0.0/0
@@ -27,9 +28,16 @@
         "read only" = "yes";
         "guest ok" = "yes";
       };
+      backup = {
+        path = "/mnt/backup";
+        "valid users" = "mjc viki";
+        browseable = "yes";
+        "read only" = "no";
+        "guest ok" = "no";
+      };
       time_machine = {
         path = "/mnt/backup/time_machine";
-        "valid users" = "mjc";
+        "valid users" = "mjc viki";
         public = "no";
         writeable = "yes";
         "force group" = "media";
