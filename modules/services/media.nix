@@ -60,5 +60,11 @@
       volumes = ["/var/lib/tautulli:/config:rw"];
       autoStart = true;
     };
+    overseerr = {
+      image = "lscr.io/linuxserver/overseerr:develop";
+      ports = ["5055:5055"];
+      volumes = ["/var/lib/overseerr:/config:rw"];
+      autoStart = true;
+    };
   };
 }

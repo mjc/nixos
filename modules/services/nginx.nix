@@ -85,6 +85,14 @@
         proxyWebsockets = true;
       };
     };
+    virtualHosts."overseerr.325i.org" = {
+      enableACME = true;
+      forceSSL = true;
+      locations."/" = {
+        proxyPass = "http://127.0.0.1:5055";
+        proxyWebsockets = true;
+      };
+    };
 
     appendHttpConfig = ''
       real_ip_header CF-Connecting-IP;
