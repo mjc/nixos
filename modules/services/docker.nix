@@ -8,4 +8,7 @@
     };
     # TODO: figure out nvidia containers
   };
+
+  virtualisation.oci-containers.backend = "docker";
+  
 }

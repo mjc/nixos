@@ -33,7 +33,7 @@
         ./modules/nixos/disks.nix
 
         ./modules/services/docker.nix
-        ./modules/services/jdownloader.nix
+        ./modules/services/docker-containers.nix
 
         ./modules/services/tailscale.nix
         ./modules/services/avahi.nix
