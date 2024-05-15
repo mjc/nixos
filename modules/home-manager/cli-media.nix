@@ -38,8 +38,8 @@
       audio="--acodec libopus --enc b:a=48k --enc ac=2"
       grain="--svt film-grain=8 --svt tune=0 --svt film-grain-denoise=0"
       filter="--vfilter scale=1920:-2 ''${grain}"
-      av1cmd="ab-av1 auto-encode ''${video} ''${filter}  ''${audio} --scd true --cache true --keyint 30s -i"
-      fd '2\.0' -E '*720*' -E '*Opus*' -e mkv -j1 -x ''${av1cmd} ''${grain}
+      av1cmd="ab-av1 auto-encode ''${video} ''${filter} ''${grain} ''${audio} --scd true --cache true --keyint 30s -i"
+      fd '2\.0' -E '*720*' -E '*Opus*' -e mkv -j1 -x ''${av1cmd}
     '')
     (writeShellScriptBin "x265-6ch" ''
       x265="-e libx265 --preset medium"
