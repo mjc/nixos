@@ -25,17 +25,28 @@
 
   users.defaultUserShell = pkgs.zsh;
 
-  users.users.mjc = {
-    isNormalUser = true;
-  };
-
-  users.users.viki = {
-    isNormalUser = true;
+  users.users = {
+    mjc = {
+      isNormalUser = true;
+      extraGroups = ["wheel" "docker" "media" "backup"];
+      home = "/home/mjc";
+      shell = pkgs.zsh;
+    };
+    viki = {
+      isNormalUser = true;
+      extraGroups = ["media" "backup"];
+      home = "/home/viki";
+      shell = pkgs.zsh;
+    };
+    aurora = {
+      isNormalUser = true;
+      extraGroups = ["media" "backup"];
+      home = "/home/aurora";
+      shell = pkgs.zsh;
+    };
   };
 
   users.groups.media.members = [
-    "mjc"
-    "viki"
     "plex"
     "radarr"
     "sonarr"
@@ -44,7 +55,6 @@
   ];
   users.extraGroups.wheel.members = ["mjc"];
   users.extraGroups.docker.members = ["mjc"];
-  users.extraGroups.backup.members = ["mjc" "viki"];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
