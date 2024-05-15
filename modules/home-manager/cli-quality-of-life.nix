@@ -5,6 +5,8 @@
     htop
     tmux
     thefuck
+    ripgrep
+    fd
   ];
 
   programs.starship = {
