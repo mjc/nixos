@@ -41,7 +41,17 @@
 
         ./modules/services/nginx.nix
         ./modules/services/glances.nix
-        ./modules/services/media.nix
+
+        ./modules/services/jdownloader2.nix
+
+        ./modules/services/media/bazarr.nix
+        ./modules/services/media/sonarr.nix
+        ./modules/services/media/plex.nix
+        ./modules/services/media/radarr.nix
+
+        ./modules/services/usenet/prowlarr.nix
+        ./modules/services/usenet/sabnzbd.nix
+
         inputs.home-manager.nixosModules.default
       ];
     };
