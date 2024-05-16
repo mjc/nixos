@@ -54,6 +54,8 @@
         ./modules/services/usenet/prowlarr.nix
         ./modules/services/usenet/sabnzbd.nix
 
+        ./modules/services/web/emulatorjs.nix
+
         inputs.home-manager.nixosModules.default
       ];
     };
