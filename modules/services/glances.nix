@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   # TODO: figure out why services.glances.enable = true; does not work
   systemd.services.glances = {
+    enable = true;
     wantedBy = ["multiuser.target"];
     after = ["network.target"];
     description = "Start the glances web ui";
