@@ -1,4 +1,8 @@
-{...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.
@@ -22,4 +26,14 @@
   home.sessionVariables = {
     EDITOR = "code -w";
   };
+
+  nixpkgs.config.allowUnfreePredicate = pkg:
+    builtins.elem (lib.getName pkg) [
+      # Add additional package names here
+      "discord-ptb"
+    ];
+
+  home.packages = with pkgs; [
+    discord-ptb
+  ];
 }
