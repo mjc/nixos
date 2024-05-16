@@ -45,9 +45,11 @@
         ./modules/services/jdownloader2.nix
 
         ./modules/services/media/bazarr.nix
-        ./modules/services/media/sonarr.nix
+        ./modules/services/media/overseerr.nix
         ./modules/services/media/plex.nix
         ./modules/services/media/radarr.nix
+        ./modules/services/media/sonarr.nix
+        ./modules/services/media/tautulli.nix
 
         ./modules/services/usenet/prowlarr.nix
         ./modules/services/usenet/sabnzbd.nix
