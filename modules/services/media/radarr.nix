@@ -6,7 +6,7 @@
   };
 
   services.nginx.virtualHosts."radarr.325i.org" = {
-    quic = true; # requires services.nginx.package = pkgs.nginxQuic;
+    http3 = true; # requires services.nginx.package = pkgs.nginxQuic;
     enableACME = true;
     forceSSL = true;
     locations."/" = {

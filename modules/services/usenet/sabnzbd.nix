@@ -5,6 +5,7 @@
     group = "media";
   };
   services.nginx.virtualHosts."sabnzbd.325i.org" = {
+    http3 = true; # requires services.nginx.package = pkgs.nginxQuic;
     enableACME = true;
     forceSSL = true;
     locations."/" = {
