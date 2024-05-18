@@ -6,7 +6,7 @@
     autoStart = true;
   };
   services.nginx.virtualHosts."tautulli.325i.org" = {
-    http3 = true; # requires services.nginx.package = pkgs.nginxQuic;
+    http3 = true;
     enableACME = true;
     forceSSL = true;
     locations."/" = {
