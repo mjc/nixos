@@ -29,6 +29,8 @@
       modules = [
         configuration
         ./hosts/tina/configuration.nix
+        # this machine backs up important data to another zfs pool
+        ./modules/services/backup.nix
         ./modules/nixos/nvidia.nix
         ./modules/nixos/disks.nix
 
@@ -54,7 +56,7 @@
         ./modules/services/usenet/prowlarr.nix
         ./modules/services/usenet/sabnzbd.nix
 
-        ./modules/services/web/emulatorjs.nix
+        # ./modules/services/web/organizrr.nix
 
         inputs.home-manager.nixosModules.default
       ];

@@ -10,8 +10,6 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    # this machine backs up important data to another zfs pool
-    ./backup.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -67,6 +65,7 @@
     microcodeAmd
     rasdaemon
     home-manager
+    doas-sudo-shim
   ];
 
   hardware.rasdaemon.enable = true;
@@ -112,6 +111,7 @@
   };
 
   security.doas.enable = true;
+  security.sudo.enable = false;
   security.doas.extraRules = [
     {
       users = ["mjc"];
