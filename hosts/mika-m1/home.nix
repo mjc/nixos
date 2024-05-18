@@ -19,6 +19,7 @@
     ../../modules/home-manager/dev-tools.nix
     ../../modules/home-manager/dev-tools.nix
     ../../modules/home-manager/file-management.nix
+    ../../modules/home-manager/ssh-gpg.nix
     ../../modules/home-manager/tmux.nix
     ../../modules/home-manager/zsh.nix
   ];

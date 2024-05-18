@@ -8,6 +8,7 @@
     ../../modules/home-manager/file-management.nix
     ../../modules/home-manager/tmux.nix
     ../../modules/home-manager/zsh.nix
+    ../../modules/home-manager/ssh-gpg.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
