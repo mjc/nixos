@@ -25,7 +25,8 @@
   };
 
   boot.extraModprobeConfig = ''
-    options zfs zfs_arc_max=53876853964
+    # options zfs zfs_arc_max=53876853964
+    options zfs zfs_arc_max=43101483171
   '';
   boot.zfs.extraPools = ["backup"];
 }
