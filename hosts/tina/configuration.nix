@@ -116,7 +116,7 @@
     {
       users = ["mjc"];
       keepEnv = true;
-      persist = true;
+      # persist = true;
       noPass = true;
     }
   ];
