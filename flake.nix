@@ -46,6 +46,8 @@
 
         ./modules/services/jdownloader2.nix
 
+        ./modules/services/homeassistant.nix
+
         ./modules/services/media/bazarr.nix
         ./modules/services/media/overseerr.nix
         ./modules/services/media/plex.nix
