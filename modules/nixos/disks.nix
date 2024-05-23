@@ -4,7 +4,7 @@
 
   hardware.sensor.hddtemp = {
     enable = true;
-    drives = lib.mkDefault ["/dev/sd?" "/dev/nvme*"];
+    drives = lib.mkDefault ["/dev/sd?"];
     unit = "C";
   };
 
