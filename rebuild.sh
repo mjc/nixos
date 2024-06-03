@@ -5,9 +5,11 @@ operating_system="$(uname -s)"
 case "${operating_system}" in
     Linux*)
         doas nix-channel --update
+        nix flake update
         doas nixos-rebuild switch --refresh --flake "$(pwd)";;
     Darwin*)
         nix-channel --update
+        nix flake update
         darwin-rebuild switch --refresh --flake "$(pwd)";;
 esac
 # nix-collect-garbage --delete-older-than 30d
