@@ -57,6 +57,7 @@
         ./modules/services/media/radarr.nix
         ./modules/services/media/sonarr.nix
         ./modules/services/media/tautulli.nix
+        ./modules/services/media/fileflows.nix
 
         ./modules/services/usenet/prowlarr.nix
         ./modules/services/usenet/sabnzbd.nix
