@@ -1,5 +1,25 @@
-{pkgs, ...}: {
-  # TODO: figure out why services.glances.enable = true; does not work
+{pkgs, ...}: let
+  webGlances = pkgs.glances.overrideAttrs (old: {
+    propagatedBuildInputs =
+      (old.propagatedBuildInputs or [])
+      ++ (with pkgs.python3Packages; [
+        batinfo
+        docker
+        fastapi
+        orjson
+        jinja2
+        uvicorn
+        nvidia-ml-py
+        requests
+        sparklines
+        zeroconf
+      ]);
+  });
+in {
+  environment.systemPackages = with pkgs; [
+    webGlances
+  ];
+
   systemd.services.glances = {
     enable = true;
     wantedBy = ["multiuser.target"];
@@ -9,7 +29,7 @@
     serviceConfig = {
       Type = "simple";
       Restart = "on-abort";
-      ExecStart = ''${pkgs.glances}/bin/glances -w -B 127.0.0.1 --enable-plugin hddtemp'';
+      ExecStart = ''${webGlances}/bin/glances -w -B 127.0.0.1 --enable-plugin hddtemp'';
     };
   };
 
