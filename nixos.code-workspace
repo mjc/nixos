@@ -12,5 +12,9 @@
 		]
 	},
 	"settings": {
+		"cSpell.words": [
+			"nixpkgs",
+			"pkgs"
+		]
 	}
 }
