@@ -28,6 +28,12 @@
         "read only" = "yes";
         "guest ok" = "yes";
       };
+      tv = {
+        path = "/mnt/tv";
+        browseable = "yes";
+        "read only" = "yes";
+        "guest ok" = "yes";
+      };
       backup = {
         path = "/mnt/backup";
         "valid users" = "mjc viki";
