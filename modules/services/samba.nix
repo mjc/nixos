@@ -23,7 +23,7 @@
         "guest ok" = "no";
       };
       music = {
-        path = "/mnt/music";
+        path = "/mnt/media/music";
         browseable = "yes";
         "read only" = "yes";
         "guest ok" = "yes";
