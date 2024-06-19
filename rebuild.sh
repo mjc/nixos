@@ -11,5 +11,5 @@ case "${operating_system}" in
         nix flake update
         darwin-rebuild switch --refresh --flake "$(pwd)";;
 esac
-# nix-collect-garbage --delete-older-than 30d
+nix-collect-garbage --delete-older-than 30d
 nix-store --optimize
