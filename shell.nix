@@ -6,4 +6,7 @@ pkgs.mkShell {
     alejandra # nixos formatter
     nil # nix language server
   ];
+  shellHook = ''
+    export GH_CONFIG_DIR=$HOME/.config/gh/personal
+  '';
 }
