@@ -95,6 +95,7 @@
           home-manager = {
             # include the home-manager module
             users.mcohen = import ./hosts/Mika-ELC-Laptop/home.nix;
+            backupFileExtension = ".home-manager-backup";
           };
           users.users.mcohen.home = "/Users/mcohen";
         }
