@@ -13,6 +13,7 @@
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
   imports = [
+    ../../modules/home-manager/direnv.nix
     ../../modules/home-manager/cli-quality-of-life.nix
     ../../modules/home-manager/file-management.nix
     ../../modules/home-manager/ssh-gpg.nix
@@ -22,15 +23,5 @@
 
   home.sessionVariables = {
     EDITOR = "code -w";
-  };
-
-  home.packages = with pkgs; [
-    direnv
-  ];
-
-  programs.direnv = {
-    enable = true;
-    enableZshIntegration = true; # see note on other shells below
-    nix-direnv.enable = true;
   };
 }

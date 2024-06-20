@@ -1,5 +1,6 @@
 {pkgs, ...}: {
   imports = [
+    ../../modules/home-manager/direnv.nix
     ../../modules/home-manager/cli-internet.nix
     ../../modules/home-manager/cli-media.nix
     ../../modules/home-manager/cli-quality-of-life.nix
