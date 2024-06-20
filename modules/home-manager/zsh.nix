@@ -15,7 +15,7 @@
 
     oh-my-zsh = {
       enable = true;
-      plugins = ["git" "thefuck" "history" "rust" "fd" "gh" "mosh" "ssh-agent" "sudo" "tmux" "ruby"];
+      plugins = ["direnv" "git" "thefuck" "history" "rust" "fd" "gh" "mosh" "ssh-agent" "sudo" "tmux" "ruby"];
       theme = "robbyrussell";
       extraConfig = ''
         PATH=$HOME/.cargo/bin:$HOME/.npm-packages/bin:$PATH
