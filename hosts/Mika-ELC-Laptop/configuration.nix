@@ -22,5 +22,12 @@
 
   # The platform the configuration will be used on.
   nixpkgs.hostPlatform = "aarch64-darwin";
-
+  
+  home-manager = {
+    # also pass inputs to home-manager modules
+    #extraSpecialArgs = { inherit inputs; };
+    users = {
+      "mjc" = import ./home.nix;
+    };
+  };
 }
