@@ -16,6 +16,7 @@
 		"cSpell.words": [
 			"nixpkgs",
 			"pkgs"
-		]
+		],
+		"nixEnvSelector.nixFile": "${workspaceFolder}/shell.nix"
 	}
 }
