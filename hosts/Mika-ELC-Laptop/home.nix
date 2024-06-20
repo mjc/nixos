@@ -14,7 +14,6 @@
 
   imports = [
     ../../modules/home-manager/cli-quality-of-life.nix
-    ../../modules/home-manager/dev-tools.nix
     ../../modules/home-manager/file-management.nix
     ../../modules/home-manager/ssh-gpg.nix
     ../../modules/home-manager/tmux.nix
@@ -26,5 +25,6 @@
   };
 
   home.packages = with pkgs; [
+    direnv
   ];
 }

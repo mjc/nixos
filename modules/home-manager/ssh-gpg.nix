@@ -1,9 +1,13 @@
-{...}: {
+{pkgs, ...}: {
   # services.gpg-agent = {
   #   enable = true;
   #   defaultCacheTtl = 1800;
   #   enableSshSupport = true;
   # };
+  home.packages = with pkgs; [
+    mosh
+  ];
+
   programs.ssh = {
     enable = true;
     addKeysToAgent = "yes";
