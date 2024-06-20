@@ -8,18 +8,14 @@
 		"recommendations": [
 			"kamadorueda.alejandra",
 			"github.copilot",
-			"jnoortheen.nix-ide"
+			"jnoortheen.nix-ide",
+			"arrterian.nix-env-selector"
 		]
 	},
 	"settings": {
 		"cSpell.words": [
 			"nixpkgs",
 			"pkgs"
-		],
-		"workbench.colorCustomizations": {
-			"activityBar.background": "#17303D",
-			"titleBar.activeBackground": "#214455",
-			"titleBar.activeForeground": "#F7FAFC"
-		}
+		]
 	}
 }
