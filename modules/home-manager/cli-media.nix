@@ -12,7 +12,7 @@
       # grain="--svt film-grain=8 --svt tune=0 --svt film-grain-denoise=0"
       filter="--vfilter scale=1920:-2 ''${grain}"
       av1cmd="ab-av1 auto-encode ''${video}  ''${filter} --scd true --cache true --keyint 30s -i"
-      fd atmos -E '*720*' -E '*Opus*' -E '*Atmos*' -e mkv -j1 -x ''${av1cmd}
+      fd atmos -E '*720*' -E '*Opus*' -e mkv -j1 -x ''${av1cmd}
     '')
     (writeShellScriptBin "av1-8ch" ''
       video="--pix-format yuv420p10le"
@@ -52,7 +52,7 @@
       video="''${x265} --pix-format yuv420p10le"
       scale="--vfilter scale=1920:-2"
       av1cmd="ab-av1 auto-encode ''${video} ''${scale} --scd true --cache true --keyint 30s -i"
-      fd atmos -E '*720*' -E '*Opus*' -E '*Atmos*' -e mkv -j1 -x ''${av1cmd}
+      fd atmos -E '*720*' -E '*Opus*' -e mkv -j1 -x ''${av1cmd}
     '')
     (writeShellScriptBin "x265-8ch" ''
       x265="-e libx265 --preset medium"
