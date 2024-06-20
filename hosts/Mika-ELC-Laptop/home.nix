@@ -24,4 +24,8 @@
   home.sessionVariables = {
     EDITOR = "code -w";
   };
+
+  home.packages = with pkgs; [
+    gh
+  ];
 }
