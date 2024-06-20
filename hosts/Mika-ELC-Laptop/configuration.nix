@@ -13,7 +13,7 @@
   # Necessary for using flakes on this system.
   nix.settings.experimental-features = "nix-command flakes";
 
-  # Create /etc/zshrc that loads the nix-darwin environment.
+  # Create /etc/zshrc `that loads the nix-darwin environment.
   programs.zsh.enable = true; # default shell on catalina
 
   # Used for backwards compatibility, please read the changelog before changing.
@@ -22,12 +22,4 @@
 
   # The platform the configuration will be used on.
   nixpkgs.hostPlatform = "aarch64-darwin";
-  
-  home-manager = {
-    # also pass inputs to home-manager modules
-    #extraSpecialArgs = { inherit inputs; };
-    users = {
-      "mjc" = import ./home.nix;
-    };
-  };
 }

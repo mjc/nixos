@@ -12,7 +12,7 @@
     gh
     nodePackages.cspell
 
-        # nix lang
+    # nix lang
     alejandra # nixos formatter
     nil # nix language server
 

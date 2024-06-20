@@ -87,11 +87,18 @@
 
     darwinConfigurations."Mika-ELC-Laptop" = nix-darwin.lib.darwinSystem {
       specialArgs = {inherit inputs;};
-      modules = [ 
+      modules = [
         configuration
         ./hosts/Mika-ELC-Laptop/configuration.nix
-        ];
-
+        home-manager.darwinModules.home-manager
+        {
+          home-manager = {
+            # include the home-manager module
+            users.mjc = import ./hosts/Mika-ELC-Laptop/home.nix;
+          };
+          users.users.mjc.home = "/Users/mjc";
+        }
+      ];
     };
   };
 }
