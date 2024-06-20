@@ -94,9 +94,9 @@
         {
           home-manager = {
             # include the home-manager module
-            users.mjc = import ./hosts/Mika-ELC-Laptop/home.nix;
+            users.mcohen = import ./hosts/Mika-ELC-Laptop/home.nix;
           };
-          users.users.mjc.home = "/Users/mjc";
+          users.users.mcohen.home = "/Users/mcohen";
         }
       ];
     };
