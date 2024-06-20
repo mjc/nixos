@@ -85,7 +85,13 @@
       ];
     };
 
-    # Expose the package set, including overlays, for convenience.
-    darwinPackages = self.darwinConfigurations."mika-m1".pkgs;
+    darwinConfigurations."Mika-ELC-Laptop" = nix-darwin.lib.darwinSystem {
+      specialArgs = {inherit inputs;};
+      modules = [ 
+        configuration
+        ./hosts/Mika-ELC-Laptop/configuration.nix
+        ];
+
+    };
   };
 }
