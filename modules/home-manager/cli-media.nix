@@ -7,13 +7,12 @@
     mkvtoolnix
 
     # TODO: consolidate these.
-    (writeShellScriptBin "av1-6ch" ''
+    (writeShellScriptBin "av1-atmos" ''
       video="--pix-format yuv420p10le"
-      audio="--acodec libopus --enc b:a=128k --enc ac=6"
       # grain="--svt film-grain=8 --svt tune=0 --svt film-grain-denoise=0"
       filter="--vfilter scale=1920:-2 ''${grain}"
-      av1cmd="ab-av1 auto-encode ''${video} ''${filter}  ''${audio} --scd true --cache true --keyint 30s -i"
-      fd '5\.1' -E '*720*' -E '*Opus*' -E '*Atmos*' -e mkv -j1 -x ''${av1cmd}
+      av1cmd="ab-av1 auto-encode ''${video}  ''${filter} --scd true --cache true --keyint 30s -i"
+      fd atmos -E '*720*' -E '*Opus*' -E '*Atmos*' -e mkv -j1 -x ''${av1cmd}
     '')
     (writeShellScriptBin "av1-8ch" ''
       video="--pix-format yuv420p10le"
@@ -22,6 +21,14 @@
       filter="--vfilter scale=1920:-2 ''${grain}"
       av1cmd="ab-av1 auto-encode ''${video}  ''${filter}  ''${audio} --scd true --cache true --keyint 30s -i"
       fd '7\.1' -E '*720*' -E '*Opus*' -E '*Atmos*' -e mkv -j1 -x ''${av1cmd}
+    '')
+    (writeShellScriptBin "av1-6ch" ''
+      video="--pix-format yuv420p10le"
+      audio="--acodec libopus --enc b:a=128k --enc ac=6"
+      # grain="--svt film-grain=8 --svt tune=0 --svt film-grain-denoise=0"
+      filter="--vfilter scale=1920:-2 ''${grain}"
+      av1cmd="ab-av1 auto-encode ''${video} ''${filter}  ''${audio} --scd true --cache true --keyint 30s -i"
+      fd '5\.1' -E '*720*' -E '*Opus*' -E '*Atmos*' -e mkv -j1 -x ''${av1cmd}
     '')
     (writeShellScriptBin "av1-stereo" ''
       video="--pix-format yuv420p10le"
@@ -39,13 +46,13 @@
       av1cmd="ab-av1 auto-encode ''${video} ''${filter} ''${grain} ''${audio} --scd true --cache true --keyint 30s -i"
       fd '2\.0' -E '*720*' -E '*Opus*' -E '*Atmos*' -e mkv -j1 -x ''${av1cmd}
     '')
-    (writeShellScriptBin "x265-6ch" ''
+    # keep atmos audio bc I have an atmos setup
+    (writeShellScriptBin "x265-atmos" ''
       x265="-e libx265 --preset medium"
       video="''${x265} --pix-format yuv420p10le"
-      audio="--acodec libopus --enc b:a=128k --enc ac=6"
       scale="--vfilter scale=1920:-2"
-      av1cmd="ab-av1 auto-encode ''${video} ''${scale}  ''${audio} --scd true --cache true --keyint 30s -i"
-      fd 5\.1 -E '*720*' -E '*Opus*' -E '*Atmos*' -e mkv -j1 -x ''${av1cmd}
+      av1cmd="ab-av1 auto-encode ''${video} ''${scale} --scd true --cache true --keyint 30s -i"
+      fd atmos -E '*720*' -E '*Opus*' -E '*Atmos*' -e mkv -j1 -x ''${av1cmd}
     '')
     (writeShellScriptBin "x265-8ch" ''
       x265="-e libx265 --preset medium"
@@ -54,6 +61,14 @@
       scale="--vfilter scale=1920:-2"
       av1cmd="ab-av1 auto-encode ''${video} ''${scale} ''${audio} --scd true --cache true --keyint 30s -i"
       fd 7\.1 -E '*720*' -E '*Opus*' -E '*Atmos*' -e mkv -j1 -x ''${av1cmd}
+    '')
+    (writeShellScriptBin "x265-6ch" ''
+      x265="-e libx265 --preset medium"
+      video="''${x265} --pix-format yuv420p10le"
+      audio="--acodec libopus --enc b:a=128k --enc ac=6"
+      scale="--vfilter scale=1920:-2"
+      av1cmd="ab-av1 auto-encode ''${video} ''${scale}  ''${audio} --scd true --cache true --keyint 30s -i"
+      fd 5\.1 -E '*720*' -E '*Opus*' -E '*Atmos*' -e mkv -j1 -x ''${av1cmd}
     '')
     (writeShellScriptBin "x265-stereo" ''
       x265="-e libx265 --preset medium"
