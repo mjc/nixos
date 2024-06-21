@@ -19,7 +19,6 @@
       theme = "robbyrussell";
       extraConfig = ''
         PATH=$HOME/.cargo/bin:$HOME/.npm-packages/bin:$PATH
-        AB_AV1_TEMP_DIR=$HOME/.ab-av1
       '';
     };
   };
