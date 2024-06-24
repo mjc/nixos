@@ -7,6 +7,7 @@
     thefuck
     ripgrep
     fd
+    killall
   ];
 
   programs.starship = {
