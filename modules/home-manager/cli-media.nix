@@ -78,5 +78,18 @@
       av1cmd="ab-av1 auto-encode --temp-dir $HOME/.ab-av1 ''${video} ''${scale}  ''${audio} --scd true --cache true --keyint 30s -i"
       fd 2\.0 -E '*720*' -E '*Opus*' -E '*Atmos*' -e mkv -j1 -x ''${av1cmd}
     '')
+    (
+      writeShellScriptBin "print-bitrates" ''
+        #!/usr/bin/env bash
+
+        dir=$(echo $PWD | sed "s/\//_/g")
+
+        echo writing to /tmp/''${dir}-bitrates-sorted.txt
+        fd . -0 -E '*Opus*' -e mkv -e mp4 | xargs -0 -I {} sh -c 'echo -n "{}" && ffmpeg -i "{}" 2>&1 | sed -n -e "s/^.*bitrate: /\| /p" ' > /tmp/''${dir}-bitrates.txt
+        sort -r -t'|' -k2 -n  < /tmp/''${dir}-bitrates.txt > /tmp/''${dir}-bitrates-sorted.txt
+        rm /tmp/''${dir}-bitrates.txt
+        echo written.
+      ''
+    )
   ];
 }
