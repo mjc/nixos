@@ -1,4 +1,4 @@
-{...}: {
+{config, ...}: {
   virtualisation.oci-containers.containers.tautulli = {
     image = "linuxserver/tautulli";
     ports = ["8181:8181"];
@@ -10,7 +10,7 @@
     enableACME = true;
     forceSSL = true;
     locations."/" = {
-      proxyPass = "http://127.0.0.1:8181";
+      proxyPass = "http://127.0.0.1:${toString config.services.tautulli.port}";
       proxyWebsockets = true;
     };
   };
