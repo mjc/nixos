@@ -29,10 +29,10 @@
         extra-substituters = [
           "https://nixcache.325i.org"
           "https://nix-community.cachix.org"
-          "https://cache.nixos.org"
         ];
         extra-trusted-public-keys = [
           "nixcache.325i.org:Rpps5GPjheD16IEWMx6vwAtTqDuYRffVMA4teUwnWRI="
+          nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=
         ];
       };
     };
