@@ -9,7 +9,7 @@
 			"kamadorueda.alejandra",
 			"github.copilot",
 			"jnoortheen.nix-ide",
-			"arrterian.nix-env-selector"
+			"mkhl.direnv",
 		]
 	},
 	"settings": {
@@ -17,6 +17,11 @@
 			"nixpkgs",
 			"pkgs"
 		],
-		"nixEnvSelector.nixFile": "${workspaceFolder}/shell.nix"
+		"nixEnvSelector.nixFile": "${workspaceFolder}/shell.nix",
+		"workbench.colorCustomizations": {
+			"activityBar.background": "#5C0D23",
+			"titleBar.activeBackground": "#811232",
+			"titleBar.activeForeground": "#FEFBFC"
+		}
 	}
 }
