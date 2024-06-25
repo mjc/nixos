@@ -25,6 +25,17 @@
     configuration = {pkgs, ...}: {
       # Set Git commit hash for darwin-version.
       system.configurationRevision = self.rev or self.dirtyRev or null;
+      nix.settings = {
+        substituters = [
+          "https://nixcache.325i.org"
+          "https://nix-community.cachix.org"
+          "https://cache.nixos.org/"
+        ];
+        trusted-public-keys = [
+          "nixcache.325i.org:ICVY7y0FaYoPUvTRQ/K4QPCjsX3R9dGwSWEdNKaycaE6gLbxNXBuv0Tv58fm5X2tXDWb2e0Ap1lIbdeMkwnfDw=="
+          "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+        ];
+      };
     };
   in {
     nixosConfigurations.tina = nixpkgs.lib.nixosSystem {
@@ -77,10 +88,7 @@
 
         home-manager.darwinModules.home-manager
         {
-          home-manager = {
-            # include the home-manager module
-            users.mjc = import ./hosts/mika-m1/home.nix;
-          };
+          home-manager.users.mjc = import ./hosts/mika-m1/home.nix;
           users.users.mjc.home = "/Users/mjc";
         }
       ];
@@ -94,7 +102,6 @@
         home-manager.darwinModules.home-manager
         {
           home-manager = {
-            # include the home-manager module
             users.mcohen = import ./hosts/Mika-ELC-Laptop/home.nix;
             backupFileExtension = ".home-manager-backup";
           };
