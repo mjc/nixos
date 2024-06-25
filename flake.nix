@@ -32,7 +32,7 @@
           "https://cache.nixos.org/"
         ];
         trusted-public-keys = [
-          "nixcache.325i.org:ICVY7y0FaYoPUvTRQ/K4QPCjsX3R9dGwSWEdNKaycaE6gLbxNXBuv0Tv58fm5X2tXDWb2e0Ap1lIbdeMkwnfDw=="
+          "nixcache.325i.org:Rpps5GPjheD16IEWMx6vwAtTqDuYRffVMA4teUwnWRI="
           "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
         ];
       };
