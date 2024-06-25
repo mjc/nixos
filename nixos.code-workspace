@@ -17,11 +17,6 @@
 			"nixpkgs",
 			"pkgs"
 		],
-		"nixEnvSelector.nixFile": "${workspaceFolder}/shell.nix",
-		"workbench.colorCustomizations": {
-			"activityBar.background": "#5C0D23",
-			"titleBar.activeBackground": "#811232",
-			"titleBar.activeForeground": "#FEFBFC"
-		}
+		"nixEnvSelector.nixFile": "${workspaceFolder}/shell.nix"
 	}
 }
