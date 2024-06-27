@@ -69,6 +69,7 @@
         ./modules/services/media/radarr.nix
         ./modules/services/media/sonarr.nix
 
+        ./modules/services/media/jellyfin.nix
         ./modules/services/media/plex.nix
         ./modules/services/media/tautulli.nix
 
