@@ -15,7 +15,7 @@
           set -g @dracula-show-powerline true
           set -g @dracula-refresh-rate 10
 
-          set -g @dracula-network-bandwidth enp9s0
+          set -g @dracula-network-bandwidth enp15s0
           set -g @dracula-network-bandwidth-interval 1
           set -g @dracula-network-bandwidth-show-interface true
 
