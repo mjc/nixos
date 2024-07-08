@@ -2,6 +2,10 @@
 {...}: {
   services.samba = {
     enable = true;
+    enableNmbd = true;
+    enableWinbindd = true;
+    nsswins = true;
+
     securityType = "user";
     openFirewall = true;
     extraConfig = ''
