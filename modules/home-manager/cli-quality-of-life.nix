@@ -4,7 +4,8 @@
     ncdu
     htop
     tmux
-    thefuck
+    # currently broken
+    # thefuck
     ripgrep
     fd
     killall
