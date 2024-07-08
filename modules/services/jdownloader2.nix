@@ -5,7 +5,9 @@
     environment = {
       USER_ID = "1000";
       GROUP_ID = "994";
-      UMASK = "017";
+      UMASK = "002";
+      TZ = "America/Denver";
+      JDOWNLOADER_MAX_MEM = "2G";
     };
     volumes = ["/var/lib/jdownloader2:/config:rw" "/mnt/downloads:/output:rw"];
     autoStart = true;

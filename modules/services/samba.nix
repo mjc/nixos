@@ -22,6 +22,12 @@
         "read only" = "no";
         "guest ok" = "no";
       };
+      games = {
+        path = "/mnt/media/games";
+        browseable = "yes";
+        "read only" = "yes";
+        "guest ok" = "yes";
+      };
       music = {
         path = "/mnt/media/music";
         browseable = "yes";
