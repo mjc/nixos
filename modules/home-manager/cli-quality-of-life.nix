@@ -5,7 +5,7 @@
     htop
     tmux
     # currently broken
-    # thefuck
+    thefuck
     ripgrep
     fd
     killall
