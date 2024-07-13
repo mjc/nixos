@@ -23,38 +23,36 @@
     shares = {
       homes = {
         browseable = "no";
-        "read only" = "no";
         "guest ok" = "no";
       };
       games = {
         path = "/mnt/media/games";
         browseable = "yes";
-        "read only" = "yes";
         "guest ok" = "yes";
+        "write list" = "mjc";
       };
       music = {
         path = "/mnt/media/music";
         browseable = "yes";
-        "read only" = "yes";
         "guest ok" = "yes";
+        "write list" = "mjc";
       };
       movies = {
-        path = "/mnt/movies";
+        path = "/mnt/media/movies";
         browseable = "yes";
-        "read only" = "yes";
         "guest ok" = "yes";
+        "write list" = "mjc";
       };
       tv = {
         path = "/mnt/tv";
         browseable = "yes";
-        "read only" = "yes";
         "guest ok" = "yes";
+        "write list" = "mjc";
       };
       backup = {
         path = "/mnt/backup";
         "valid users" = "mjc viki";
         browseable = "yes";
-        "read only" = "no";
         "guest ok" = "no";
       };
       time_machine = {
