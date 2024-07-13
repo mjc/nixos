@@ -70,6 +70,13 @@
       av1cmd="ab-av1 auto-encode --temp-dir $HOME/.ab-av1 ''${video} ''${scale} --scd true --cache true --keyint 30s -i"
       fd atmos -E '*720*' -E '*Opus*' -e mkv -j1 -x ''${av1cmd}
     '')
+    (writeShellScriptBin "x265-keepaudio" ''
+      x265="-e libx265 --preset medium"
+      video="''${x265} --pix-format yuv420p10le"
+      scale="--vfilter scale=1920:-2"
+      av1cmd="ab-av1 auto-encode --temp-dir $HOME/.ab-av1 ''${video} ''${scale} --scd true --cache true --keyint 30s -i"
+      fd . -E '*720*' -E '*Opus*' -e mkv -j1 -x ''${av1cmd}
+    '')
     (writeShellScriptBin "x265-8ch" ''
       x265="-e libx265 --preset medium"
       video="''${x265} --pix-format yuv420p10le"
