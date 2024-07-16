@@ -25,6 +25,12 @@
         browseable = "no";
         "guest ok" = "no";
       };
+      downloads = {
+        path = "/mnt/downloads";
+        browseable = "yes";
+        "guest ok" = "yes";
+        "write list" = "mjc";
+      };
       apps = {
         path = "/mnt/media/apps";
         browseable = "yes";
