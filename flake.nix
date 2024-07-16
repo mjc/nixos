@@ -82,6 +82,18 @@
       ];
     };
 
+    nixosConfigurations.tali = nixpkgs.lib.nixosSystem {
+      specialArgs = {inherit inputs;};
+      modules = [
+        configuration
+        ./hosts/tali/configuration.nix
+
+
+        # inputs.home-manager.nixosModules.default
+      ];
+    };
+
+
     darwinConfigurations."mika-m1" = nix-darwin.lib.darwinSystem {
       specialArgs = {inherit inputs;};
       modules = [
