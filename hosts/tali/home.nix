@@ -25,12 +25,7 @@
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
   home.packages = with pkgs; [
-    (writeShellScriptBin "recompress-nzbs" ''
-      zfs list -o name,space,compress,compressratio backup/downloads/nzbs
-      fd 'gz$' /mnt/downloads/nzbs -x gzip -fd
-      sleep 5
-      zfs list -o name,space,compress,compressratio backup/downloads/nzbs
-    '')
+    glances
   ];
 
   home.sessionVariables = {
