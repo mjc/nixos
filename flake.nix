@@ -88,8 +88,7 @@
         configuration
         ./hosts/tali/configuration.nix
 
-
-        # inputs.home-manager.nixosModules.default
+        inputs.home-manager.nixosModules.default
       ];
     };
 
