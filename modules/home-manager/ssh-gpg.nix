@@ -34,6 +34,11 @@
         forwardAgent = true;
         port = 2211;
       };
+      "tali" = {
+        "hostname" = "192.168.1.37"; # fixme
+        "user" = "mjc";
+        "forwardAgent" = true;
+      };
     };
 
     # knownHosts = {
