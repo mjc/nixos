@@ -23,33 +23,6 @@
     ];
   };
 
-  fileSystems."/" =
-    { device = "zpool/root";
-      fsType = "zfs";
-    };
-
-  fileSystems."/nix" =
-    { device = "zpool/nix";
-      fsType = "zfs";
-    };
-
-  fileSystems."/var" =
-    { device = "zpool/var";
-      fsType = "zfs";
-    };
-
-  fileSystems."/home" =
-    { device = "zpool/home";
-      fsType = "zfs";
-    };
-
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-label/boot";
-      fsType = "vfat";
-    };
-
-  swapDevices = [ ];
-
   # Use the GRUB 2 boot loader.
   # boot.loader.grub.enable = true;
   # boot.loader.grub.efiSupport = true;
