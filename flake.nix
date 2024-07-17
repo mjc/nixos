@@ -71,7 +71,7 @@
 
         # ./modules/services/media/tdarr-server.nix
 
-        ./modules/services/media/jellyfin.nix
+        # ./modules/services/media/jellyfin.nix
         ./modules/services/media/plex.nix
         ./modules/services/media/tautulli.nix
 

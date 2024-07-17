@@ -74,14 +74,16 @@
   networking = {
     hostName = "tina";
     domain = "lan.325i.org";
-    nameservers = ["192.168.1.1"];
+    #nameservers = ["192.168.1.1"];
     defaultGateway = {
       address = "192.168.1.1";
-      interface = "enp9s0";
+      #  interface = "enp9s0";
+      interface = "enp14s0";
     };
   };
 
-  networking.interfaces.enp9s0 = {
+  #networking.interfaces.enp9s0 = {
+  networking.interfaces.enp14s0 = {
     ipv4.addresses = [
       {
         address = "192.168.1.5";
