@@ -64,11 +64,31 @@
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
-  #networking.useDHCP = lib.mkDefault true;
+  networking.useDHCP = lib.mkDefault true;
   networking.useNetworkd = true;
   systemd.network.enable = true;
 
-  networking.interfaces.enp14s0.useDHCP = lib.mkDefault true;
+  #networking.interfaces.enp14s0.useDHCP = lib.mkDefault true;
+  #networking.interfaces.enp9s0.useDHCP = lib.mkDefault true;
+
+  networking = {
+    hostName = "tina";
+    domain = "lan.325i.org";
+    nameservers = ["192.168.1.1"];
+    defaultGateway = {
+      address = "192.168.1.1";
+      interface = "enp9s0";
+    };
+  };
+
+  networking.interfaces.enp9s0 = {
+    ipv4.addresses = [
+      {
+        address = "192.168.1.5";
+        prefixLength = 24;
+      }
+    ];
+  };
 
   networking.hostId = "8425e349";
 

@@ -1,25 +1,29 @@
 # Edit this configuration file to define what should be installed on
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixs.org/options and in the NixOS manual (`nixos-help`).
-
-{ config, lib, pkgs, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
-    
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
+
   services.zfs.autoScrub.enable = true;
 
-
- boot.loader.grub = {
+  boot.loader.grub = {
     enable = true;
     zfsSupport = true;
     efiSupport = true;
     efiInstallAsRemovable = true;
     mirroredBoots = [
-      { devices = [ "nodev"]; path = "/boot"; }
+      {
+        devices = ["nodev"];
+        path = "/boot";
+      }
     ];
   };
 
@@ -54,11 +58,9 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
-  
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
@@ -89,15 +91,14 @@
   # };
 
   users.users.mjc = {
-  isNormalUser = true;
-  extraGroups = [ "wheel" ];
-  
-};
+    isNormalUser = true;
+    extraGroups = ["wheel"];
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-   environment.systemPackages = with pkgs; [
-     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+  environment.systemPackages = with pkgs; [
+    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     emacs
     git
@@ -147,6 +148,4 @@
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "24.05"; # Did you read the comment?
-
 }
-

@@ -92,7 +92,6 @@
       ];
     };
 
-
     darwinConfigurations."mika-m1" = nix-darwin.lib.darwinSystem {
       specialArgs = {inherit inputs;};
       modules = [
