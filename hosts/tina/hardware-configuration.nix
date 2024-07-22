@@ -74,7 +74,7 @@
   networking = {
     hostName = "tina";
     domain = "lan.325i.org";
-    #nameservers = ["192.168.1.1"];
+    nameservers = ["192.168.1.1"];
     defaultGateway = {
       address = "192.168.1.1";
       #  interface = "enp9s0";
