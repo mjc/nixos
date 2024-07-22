@@ -78,6 +78,8 @@
         ./modules/services/usenet/prowlarr.nix
         ./modules/services/usenet/sabnzbd.nix
 
+        # ./modules/services/games/minecraft.nix
+
         inputs.home-manager.nixosModules.default
       ];
     };
