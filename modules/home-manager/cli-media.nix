@@ -14,6 +14,13 @@
       av1cmd="ab-av1 auto-encode --temp-dir $HOME/.ab-av1 ''${video}  ''${filter} --scd true --cache true --keyint 30s -i"
       fd atmos -E '*720*' -E '*Opus*' -e mkv -j1 -x ''${av1cmd}
     '')
+    (writeShellScriptBin "av1-keepaudio" ''
+      video="--pix-format yuv420p10le"
+      # grain="--svt film-grain=8 --svt tune=0 --svt film-grain-denoise=0"
+      filter="--vfilter scale=1920:-2 ''${grain}"
+      av1cmd="ab-av1 auto-encode --temp-dir $HOME/.ab-av1 ''${video}  ''${filter} --scd true --cache true --keyint 30s -i"
+      fd . -E '*720*' -e mkv -j1 -x ''${av1cmd}
+    '')
     (writeShellScriptBin "av1-8ch" ''
       video="--pix-format yuv420p10le"
       audio="--acodec libopus --enc b:a=256k --enc ac=8"
