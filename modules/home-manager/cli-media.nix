@@ -19,7 +19,7 @@
       # grain="--svt film-grain=8 --svt tune=0 --svt film-grain-denoise=0"
       filter="--vfilter scale=1920:-2 ''${grain}"
       av1cmd="ab-av1 auto-encode --temp-dir $HOME/.ab-av1 ''${video}  ''${filter} --scd true --cache true --keyint 30s -i"
-      fd . -E '*720*' -e mkv -j1 -x ''${av1cmd}
+      fd . -E '*720*' -E '*AV1*' -E '*av1*' -e mkv -j1 -x ''${av1cmd}
     '')
     (writeShellScriptBin "av1-8ch" ''
       video="--pix-format yuv420p10le"
