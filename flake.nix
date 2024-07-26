@@ -78,6 +78,7 @@
 
         ./modules/services/usenet/prowlarr.nix
         ./modules/services/usenet/sabnzbd.nix
+        # ./modules/services/usenet/nntp2nntp.nix
 
         # ./modules/services/games/minecraft.nix
 
