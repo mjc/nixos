@@ -19,6 +19,8 @@
       "wonderland/root".recursive = true;
       "wonderland/var".useTemplate = ["backup"];
       "wonderland/var".recursive = true;
+      "wonderland/media/family".useTemplate = ["backup"];
+      "wonderland/media/family".recursive = true;
     };
   };
 
@@ -34,6 +36,7 @@
       "wonderland/home".target = "backup/synced/tina/home";
       "wonderland/root".target = "backup/synced/tina/root";
       "wonderland/var".target = "backup/synced/tina/var";
+      "wonderland/media/family".target = "backup/synced/tina/family";
     };
     localSourceAllow = [
       "bookmark"
