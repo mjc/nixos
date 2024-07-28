@@ -12,15 +12,23 @@
 
     datasets = {
       "wonderland/backup".useTemplate = ["backup"];
+      "wonderland/backup".recursive = true;
       "wonderland/home".useTemplate = ["backup"];
+      "wonderland/home".recursive = true;
       "wonderland/root".useTemplate = ["backup"];
+      "wonderland/root".recursive = true;
       "wonderland/var".useTemplate = ["backup"];
+      "wonderland/var".recursive = true;
     };
   };
 
   # syncoid for copying
   services.syncoid = {
     enable = true;
+    commonArgs = [
+      "--recursive"
+      "--no-stream"
+    ];
     commands = {
       "wonderland/backup".target = "backup/synced/backup";
       "wonderland/home".target = "backup/synced/tina/home";
