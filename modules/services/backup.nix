@@ -29,7 +29,6 @@
     enable = true;
     commonArgs = [
       "--recursive"
-      "--no-stream"
     ];
     commands = {
       "wonderland/backup".target = "backup/synced/backup";
