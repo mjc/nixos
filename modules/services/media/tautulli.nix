@@ -1,9 +1,8 @@
 {config, ...}: {
-  virtualisation.oci-containers.containers.tautulli = {
-    image = "linuxserver/tautulli";
-    ports = ["8181:8181"];
-    volumes = ["/var/lib/tautulli:/config:rw"];
-    autoStart = true;
+  services.tautulli = {
+    enable = true;
+    dataDir = "/var/lib/tautulli";
+    group = "media";
   };
   services.nginx.virtualHosts."tautulli.325i.org" = {
     http3 = true;
