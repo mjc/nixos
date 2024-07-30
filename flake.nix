@@ -54,7 +54,9 @@
         ./modules/services/avahi.nix
         ./modules/services/samba.nix
         ./modules/services/openssh.nix
+
         ./modules/services/web/nix-serve.nix
+        # ./modules/services/web/livebook.nix
 
         ./modules/services/nginx.nix
         ./modules/services/glances.nix
