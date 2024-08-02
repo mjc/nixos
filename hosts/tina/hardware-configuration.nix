@@ -32,22 +32,22 @@
   boot.kernelParams = ["nohibernate" "mitigations=off"];
 
   fileSystems."/" = {
-    device = "wonderland/root";
+    device = "zroot/root";
     fsType = "zfs";
   };
 
   fileSystems."/var" = {
-    device = "wonderland/var";
+    device = "zroot/var";
     fsType = "zfs";
   };
 
   fileSystems."/nix" = {
-    device = "wonderland/nix";
+    device = "zroot/nix";
     fsType = "zfs";
   };
 
   fileSystems."/home" = {
-    device = "wonderland/home";
+    device = "zroot/home";
     fsType = "zfs";
   };
 
