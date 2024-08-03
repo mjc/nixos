@@ -44,7 +44,7 @@
         configuration
         ./hosts/tina/configuration.nix
         # this machine backs up important data to another zfs pool
-        ./modules/services/backup.nix
+        # ./modules/services/backup.nix
         ./modules/nixos/nvidia.nix
         ./modules/nixos/disks.nix
 
@@ -55,7 +55,7 @@
         ./modules/services/samba.nix
         ./modules/services/openssh.nix
 
-        ./modules/services/web/nix-serve.nix
+        # ./modules/services/web/nix-serve.nix
         # ./modules/services/web/livebook.nix
 
         ./modules/services/nginx.nix
