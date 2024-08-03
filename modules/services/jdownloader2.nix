@@ -9,7 +9,7 @@
       TZ = "America/Denver";
       JDOWNLOADER_MAX_MEM = "2G";
     };
-    volumes = ["/var/lib/jdownloader2:/config:rw" "/mnt/downloads:/output:rw"];
+    volumes = ["/var/lib/jdownloader2:/config:rw" "/mnt/downloads/jdownloader:/output:rw"];
     autoStart = true;
   };
 }
