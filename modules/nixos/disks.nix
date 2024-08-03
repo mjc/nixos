@@ -9,7 +9,7 @@
   };
 
   services.zfs = {
-    expandOnBoot = ["wonderland"];
+    expandOnBoot = ["wonderland" "backup"];
 
     autoScrub = {
       enable = true;
@@ -25,8 +25,7 @@
   };
 
   boot.extraModprobeConfig = ''
-    # options zfs zfs_arc_max=53876853964
     options zfs zfs_arc_max=34359738368
   '';
-  boot.zfs.extraPools = ["backup"];
+  boot.zfs.extraPools = ["backup" "wonderland"];
 }
