@@ -27,11 +27,11 @@
       system.configurationRevision = self.rev or self.dirtyRev or null;
       nix.settings = {
         extra-substituters = [
-          "https://nixcache.325i.org"
+          # "https://nixcache.325i.org"
           "https://nix-community.cachix.org"
         ];
         extra-trusted-public-keys = [
-          "nixcache.325i.org:Rpps5GPjheD16IEWMx6vwAtTqDuYRffVMA4teUwnWRI="
+          # "nixcache.325i.org:Rpps5GPjheD16IEWMx6vwAtTqDuYRffVMA4teUwnWRI="
           "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
           "ai.cachix.org-1:N9dzRK+alWwoKXQlnn0H6aUx0lU/mspIoz8hMvGvbbc="
         ];
